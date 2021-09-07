@@ -7,4 +7,7 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 gray = cv2.GaussianBlur(gray, (3, 3), 0)
 cv2.imwrite("gray.jpg", gray)
 
+# распознаём контуры
+edged = cv2.Canny(gray, 10, 250)
+cv2.imwrite("edged.jpg", edged)
 
