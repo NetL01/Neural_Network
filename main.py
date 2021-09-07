@@ -11,3 +11,7 @@ cv2.imwrite("gray.jpg", gray)
 edged = cv2.Canny(gray, 10, 250)
 cv2.imwrite("edged.jpg", edged)
 
+# создаём и применяем закрытие
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7))
+closed = cv2.morphologyEx(edged, cv2.MORPH_CLOSE, kernel)
+cv2.imwrite("closed.jpg", closed)
